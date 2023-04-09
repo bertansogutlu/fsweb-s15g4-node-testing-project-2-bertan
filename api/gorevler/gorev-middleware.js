@@ -1,12 +1,12 @@
 const gorevModel = require('./gorev-model');
 
-async function idKontrol(req,res,next){
+async function gorevIdKontrol(req,res,next){
     try {
         const gorev = await gorevModel.getById(req.params.id);
         if(gorev.GorevID) {
             next()
         } else {
-            res.status(404).json({message: 'ID bulunamadi'})
+            res.status(404).json({message: 'Gorev ID bulunamadi'})
         }
     } catch (error) {
         next(error)
@@ -14,5 +14,5 @@ async function idKontrol(req,res,next){
 }
 
 module.exports = {
-    idKontrol
+    gorevIdKontrol
 }
