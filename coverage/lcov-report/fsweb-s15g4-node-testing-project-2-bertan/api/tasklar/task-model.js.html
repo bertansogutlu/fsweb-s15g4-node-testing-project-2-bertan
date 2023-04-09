@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">15.38% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/13</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">15.38% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/13</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -100,29 +100,29 @@
 <a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -133,30 +133,30 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const db = require('../../data/db-config');
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getAll </span>() {
-<span class="cstat-no" title="statement not covered" >    return await db('Tasklar');</span>
+async function getAll () {
+    return await db('Tasklar');
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >getById </span>(id) {
-<span class="cstat-no" title="statement not covered" >    return await db('Tasklar').where('TaskID',id).first();</span>
+async function getById (id) {
+    return await db('Tasklar').where('TaskID',id).first();
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >create </span>(task) {
-    const [id] = <span class="cstat-no" title="statement not covered" >await db('Tasklar').insert(task);</span>
-    const yeniTask = <span class="cstat-no" title="statement not covered" >await getById(id);</span>
-<span class="cstat-no" title="statement not covered" >    return yeniTask;</span>
+async function create (task) {
+    const [id] = await db('Tasklar').insert(task);
+    const yeniTask = await getById(id);
+    return yeniTask;
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >update </span>(id,task) {
-<span class="cstat-no" title="statement not covered" >    await db('Tasklar').where('TaskID',id).update(task);</span>
-    const guncelTask = <span class="cstat-no" title="statement not covered" >await getById(id);</span>
-<span class="cstat-no" title="statement not covered" >    return guncelTask;</span>
+async function update (id,task) {
+    await db('Tasklar').where('TaskID',id).update(task);
+    const guncelTask = await getById(id);
+    return guncelTask;
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >remove </span>(id) {
-    const silinenTask = <span class="cstat-no" title="statement not covered" >await getById(id);</span>
-<span class="cstat-no" title="statement not covered" >    await db('Tasklar').where('TaskID',id).del();</span>
-<span class="cstat-no" title="statement not covered" >    return silinenTask;</span>
+async function remove (id) {
+    const silinenTask = await getById(id);
+    await db('Tasklar').where('TaskID',id).del();
+    return silinenTask;
 }
 &nbsp;
 module.exports = {
@@ -172,7 +172,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-09T21:27:47.052Z
+                at 2023-04-09T22:01:46.754Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

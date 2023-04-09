@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">31.03% </span>
+                <span class="strong">82.75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/29</span>
+                <span class='fraction'>24/29</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">31.03% </span>
+                <span class="strong">82.75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/29</span>
+                <span class='fraction'>24/29</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -117,45 +117,45 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -165,46 +165,46 @@
 const taskModel = require('./task-model');
 const taskMiddleware = require('./task-middleware');
 &nbsp;
-router.get('/',<span class="fstat-no" title="function not covered" >as</span>ync(req,res,next)=&gt;{
-<span class="cstat-no" title="statement not covered" >    try {</span>
-        const butunTasklar = <span class="cstat-no" title="statement not covered" >await taskModel.getAll();</span>
-<span class="cstat-no" title="statement not covered" >        res.status(200).json(butunTasklar);</span>
+router.get('/',async(req,res,next)=&gt;{
+    try {
+        const butunTasklar = await taskModel.getAll();
+        res.status(200).json(butunTasklar);
     } catch (error) {
 <span class="cstat-no" title="statement not covered" >        next(error);</span>
     }
 });
 &nbsp;
-router.get('/:id',taskMiddleware.taskIdKontrol,<span class="fstat-no" title="function not covered" >as</span>ync(req,res,next)=&gt;{
-<span class="cstat-no" title="statement not covered" >    try {</span>
-        const task = <span class="cstat-no" title="statement not covered" >await taskModel.getById(req.params.id)</span>
-<span class="cstat-no" title="statement not covered" >        res.status(200).json(task);</span>
+router.get('/:id',taskMiddleware.taskIdKontrol,async(req,res,next)=&gt;{
+    try {
+        const task = await taskModel.getById(req.params.id)
+        res.status(200).json(task);
     } catch (error) {
 <span class="cstat-no" title="statement not covered" >        next(error);</span>
     }
 });
 &nbsp;
-router.post('/',taskMiddleware.taskPayloadKontrol,<span class="fstat-no" title="function not covered" >as</span>ync(req,res,next)=&gt;{
-<span class="cstat-no" title="statement not covered" >    try {</span>
-        const task = <span class="cstat-no" title="statement not covered" >await taskModel.create(req.body)</span>
-<span class="cstat-no" title="statement not covered" >        res.status(201).json(task);</span>
+router.post('/',taskMiddleware.taskPayloadKontrol,async(req,res,next)=&gt;{
+    try {
+        const task = await taskModel.create(req.body)
+        res.status(201).json(task);
     } catch (error) {
 <span class="cstat-no" title="statement not covered" >        next(error);</span>
     }
 });
 &nbsp;
-router.put('/:id',taskMiddleware.taskIdKontrol,taskMiddleware.taskPayloadKontrol,<span class="fstat-no" title="function not covered" >as</span>ync(req,res,next)=&gt;{
-<span class="cstat-no" title="statement not covered" >    try {</span>
-        const task = <span class="cstat-no" title="statement not covered" >await taskModel.update(req.params.id,req.body);</span>
-<span class="cstat-no" title="statement not covered" >        res.status(200).json(task);</span>
+router.put('/:id',taskMiddleware.taskIdKontrol,taskMiddleware.taskPayloadKontrol,async(req,res,next)=&gt;{
+    try {
+        const task = await taskModel.update(req.params.id,req.body);
+        res.status(200).json(task);
     } catch (error) {
 <span class="cstat-no" title="statement not covered" >        next(error);</span>
     }
 });
 &nbsp;
-router.delete('/:id',taskMiddleware.taskIdKontrol,<span class="fstat-no" title="function not covered" >as</span>ync(req,res,next)=&gt;{
-<span class="cstat-no" title="statement not covered" >    try {</span>
-        const task = <span class="cstat-no" title="statement not covered" >await taskModel.remove(req.params.id)</span>
-<span class="cstat-no" title="statement not covered" >        res.status(204).json(task);</span>
+router.delete('/:id',taskMiddleware.taskIdKontrol,async(req,res,next)=&gt;{
+    try {
+        const task = await taskModel.remove(req.params.id)
+        res.status(204).json(task);
     } catch (error) {
 <span class="cstat-no" title="statement not covered" >        next(error);</span>
     }
@@ -217,7 +217,7 @@ module.exports = router;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-04-09T21:27:47.052Z
+                at 2023-04-09T22:01:46.754Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
