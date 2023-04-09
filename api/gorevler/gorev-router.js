@@ -1,5 +1,6 @@
 const router = require('express').Router;
 const gorevModel = require('./gorev-model');
+const gorevMiddleware = require('./gorev-middleware');
 
 router.get('/',(req,res,next)=>{
     try {
@@ -9,7 +10,7 @@ router.get('/',(req,res,next)=>{
     }
 });
 
-router.get('/:id',(req,res,next)=>{
+router.get('/:id',gorevMiddleware.gorevIdKontrol,(req,res,next)=>{
     try {
         
     } catch (error) {
@@ -25,7 +26,7 @@ router.post('/',(req,res,next)=>{
     }
 });
 
-router.put('/:id',(req,res,next)=>{
+router.put('/:id',gorevMiddleware.gorevIdKontrol,(req,res,next)=>{
     try {
         
     } catch (error) {
@@ -33,7 +34,7 @@ router.put('/:id',(req,res,next)=>{
     }
 });
 
-router.delete('/:id',(req,res,next)=>{
+router.delete('/:id',gorevMiddleware.gorevIdKontrol,(req,res,next)=>{
     try {
         
     } catch (error) {
