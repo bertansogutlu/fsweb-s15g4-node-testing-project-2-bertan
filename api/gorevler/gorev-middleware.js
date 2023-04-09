@@ -13,6 +13,20 @@ async function gorevIdKontrol(req,res,next){
     }
 }
 
+async function gorevPayloadKontrol(req,res,next){
+    try {
+        const {Adi,Aciklama} = req.body
+        if(Adi && Aciklama) {
+            next()
+        } else {
+            res.status(400).json({message: 'Eksik yukleme'})
+        }
+    } catch (error) {
+        next(error)
+    }
+}
+
 module.exports = {
-    gorevIdKontrol
+    gorevIdKontrol,
+    gorevPayloadKontrol
 }

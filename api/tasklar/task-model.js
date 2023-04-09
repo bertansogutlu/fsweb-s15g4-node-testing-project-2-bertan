@@ -21,7 +21,9 @@ async function update (id,task) {
 }
 
 async function remove (id) {
-    return db('Tasklar').where('TaskID',id).del();
+    const silinenTask = await getById(id);
+    await db('Tasklar').where('TaskID',id).del();
+    return silinenTask;
 }
 
 module.exports = {

@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "server": "run nodemon index.js",
+    "server": "nodemon index.js",
     "test": "cross-env node_env=testing jest --verbose --watchAll",
     "rollback": "knex migrate:rollback",
     "migrate": "knex migrate:latest",

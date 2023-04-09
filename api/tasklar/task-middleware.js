@@ -13,6 +13,20 @@ async function taskIdKontrol(req,res,next){
     }
 }
 
+async function taskPayloadKontrol(req,res,next){
+    try {
+        const {Adi,Aciklama,GorevID} = req.body
+        if(Adi && Aciklama && GorevID) {
+            next()
+        } else {
+            res.status(400).json({message: 'Eksik yukleme'})
+        }
+    } catch (error) {
+        next(error)
+    }
+}
+
 module.exports = {
-    taskIdKontrol
+    taskIdKontrol,
+    taskPayloadKontrol
 }

@@ -21,7 +21,9 @@ async function update (id,gorev) {
 }
 
 async function remove (id) {
-    return db('Gorevler').where('GorevID',id).del();
+    const silinenGorev = await getById(id);
+    await db('Gorevler').where('GorevID',id).del();
+    return silinenGorev;
 }
 
 module.exports = {
