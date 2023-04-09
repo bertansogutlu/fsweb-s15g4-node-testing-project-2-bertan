@@ -5,15 +5,15 @@
 exports.up = function(knex) {
   const all = knex.schema.createTable("Gorevler",(table)=>{
     table.increments("GorevID")
-    table.string("Adi").notNullable
-    table.string("Aciklama").notNullable
+    table.string("Adi").notNullable()
+    table.string("Aciklama").notNullable()
   })
   .createTable("Tasklar",(table)=>{
     table.increments("TaskID")
-    table.string("Adi").notNullable
-    table.string("Aciklama").notNullable
+    table.string("Adi").notNullable()
+    table.string("Aciklama").notNullable()
     table.timestamp("Tarih").defaultTo(knex.fn.now())
-    table.integer("GorevID").notNullable.references("GorevID").inTable("Gorevler").onDelete("CASCADE").onUpdate("CASCADE")
+    table.integer("GorevID").notNullable().references("GorevID").inTable("Gorevler").onDelete("CASCADE").onUpdate("CASCADE")
   })
   return all;
 };
