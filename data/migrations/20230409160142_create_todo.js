@@ -12,7 +12,8 @@ exports.up = function(knex) {
     table.increments("TaskID")
     table.string("Adi").notNullable
     table.string("Aciklama").notNullable
-    table.integer("GorevID").references("GorevID").inTable("Gorevler").onDelete("CASCADE").onUpdate("CASCADE")
+    table.timestamp("Tarih").defaultTo(knex.fn.now())
+    table.integer("GorevID").notNullable.references("GorevID").inTable("Gorevler").onDelete("CASCADE").onUpdate("CASCADE")
   })
   return all;
 };
