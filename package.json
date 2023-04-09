@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node index.js",
     "server": "run nodemon index.js",
-    "test": "cross-env NODE_ENV=testing jest --verbose --watcAll",
+    "test": "jest",
     "rollback": "knex migrate:rollback",
     "migrate": "knex migrate:latest",
     "seed": "knex seed:run",
@@ -24,6 +24,7 @@
     "@types/jest": "^29.5.0",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
+    "eslint": "^8.38.0",
     "jest": "^29.5.0",
     "nodemon": "^2.0.22",
     "supertest": "^6.3.3"
