@@ -41,7 +41,7 @@ router.put('/:id',taskMiddleware.taskIdKontrol,taskMiddleware.taskPayloadKontrol
 router.delete('/:id',taskMiddleware.taskIdKontrol,async(req,res,next)=>{
     try {
         const task = await taskModel.remove(req.params.id)
-        res.status(204).json(task);
+        res.status(200).json(task);
     } catch (error) {
         next(error);
     }

@@ -41,7 +41,7 @@ router.put('/:id',gorevMiddleware.gorevIdKontrol,gorevMiddleware.gorevPayloadKon
 router.delete('/:id',gorevMiddleware.gorevIdKontrol,async(req,res,next)=>{
     try {
         const gorev = await gorevModel.remove(req.params.id);
-        res.status(204).json(gorev);
+        res.status(200).json(gorev);
     } catch (error) {
         next(error);
     }
